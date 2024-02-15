@@ -11,7 +11,7 @@ import {
 import { useState } from "react";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Colors from "../constants/colors";
-import Title from "../components/ui/Title.ios";
+import Title from "../components/ui/Title";
 import Card from "../components/ui/Card";
 import InstructionText from "../components/ui/InstructionText";
 function StartGameScreen({ onPickNumber }) {
@@ -70,14 +70,14 @@ function StartGameScreen({ onPickNumber }) {
     </ScrollView>
   );
 }
-// const deviceHeight = Dimensions.get("screen").height;
+const deviceHeight = Dimensions.get("screen").height;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
   },
   rootContainer: {
     flex: 1,
-    // marginTop: deviceHeight < 400 ? 30 : 100,
+    marginTop: deviceHeight < 400 ? 30 : 100,
     alignItems: "center",
   },
   numberInput: {

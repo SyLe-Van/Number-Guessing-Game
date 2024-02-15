@@ -5,7 +5,7 @@ import {
   FlatList,
   useWindowDimensions,
 } from "react-native";
-import Title from "../components/ui/Title.ios";
+import Title from "../components/ui/Title";
 import { useState, useEffect } from "react";
 import NumberContainer from "../components/game/NumberContainer";
 import PrimaryButton from "../components/ui/PrimaryButton";

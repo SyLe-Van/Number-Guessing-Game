@@ -4,8 +4,9 @@ import {
   Alert,
   FlatList,
   useWindowDimensions,
+  Text,
 } from "react-native";
-import Title from "../components/ui/Title.ios";
+import Title from "../components/ui/Title";
 import { useState, useEffect } from "react";
 import NumberContainer from "../components/game/NumberContainer";
 import PrimaryButton from "../components/ui/PrimaryButton";
@@ -97,13 +98,13 @@ function GameScreen({ userNumber, onGameOver }) {
         <InstructionText style={styles.instructionText}>
           Higher or Lower?
         </InstructionText>
-        <View style={styles.buttonContainerWidth}>
+        <View>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
               <AntDesign name="minus" size={24} color="white" />
             </PrimaryButton>
           </View>
-          <NumberContainer>{currentGuess}</NumberContainer>
+          <NumberContainer>{currentGuess}</NumberContainer>;
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
               <AntDesign name="plus" size={24} color="white" />
@@ -143,10 +144,6 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
-  },
-  buttonContainerWidth: {
-    flexDirection: "row",
-    alignItems: "center",
   },
   instructionText: {
     marginBottom: 12,

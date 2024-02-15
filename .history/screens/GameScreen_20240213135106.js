@@ -5,7 +5,7 @@ import {
   FlatList,
   useWindowDimensions,
 } from "react-native";
-import Title from "../components/ui/Title.ios";
+import Title from "../components/ui/Title";
 import { useState, useEffect } from "react";
 import NumberContainer from "../components/game/NumberContainer";
 import PrimaryButton from "../components/ui/PrimaryButton";
@@ -91,28 +91,6 @@ function GameScreen({ userNumber, onGameOver }) {
       </Card>
     </>
   );
-  if (width > 500) {
-    content = (
-      <>
-        <InstructionText style={styles.instructionText}>
-          Higher or Lower?
-        </InstructionText>
-        <View style={styles.buttonContainerWidth}>
-          <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={nextGuessHandler.bind(this, "lower")}>
-              <AntDesign name="minus" size={24} color="white" />
-            </PrimaryButton>
-          </View>
-          <NumberContainer>{currentGuess}</NumberContainer>
-          <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={nextGuessHandler.bind(this, "greater")}>
-              <AntDesign name="plus" size={24} color="white" />
-            </PrimaryButton>
-          </View>
-        </View>
-      </>
-    );
-  }
   return (
     <View style={styles.screen}>
       <Title>Opponent's Guess</Title>
@@ -143,10 +121,6 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
-  },
-  buttonContainerWidth: {
-    flexDirection: "row",
-    alignItems: "center",
   },
   instructionText: {
     marginBottom: 12,

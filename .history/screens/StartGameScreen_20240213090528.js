@@ -11,7 +11,7 @@ import {
 import { useState } from "react";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Colors from "../constants/colors";
-import Title from "../components/ui/Title.ios";
+import Title from "../components/ui/Title";
 import Card from "../components/ui/Card";
 import InstructionText from "../components/ui/InstructionText";
 function StartGameScreen({ onPickNumber }) {
@@ -40,7 +40,7 @@ function StartGameScreen({ onPickNumber }) {
   const marginTopDistance = height < 380 ? 30 : 100;
   return (
     <ScrollView style={styles.screen}>
-      <KeyboardAvoidingView style={styles.screen} behavior="position">
+      <KeyboardAvoidingView style={styles.screen}>
         <View style={[styles.rootContainer, { marginTop: marginTopDistance }]}>
           <Title>Guess my number</Title>
           <Card>
